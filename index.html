@@ -3,20 +3,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
 
-  <div ng-app="myApp" ng-controller="myCtrl">
+  <div ng-app="myApp"  tims-test-directive>
 
     First Name: <input type="text" ng-model="firstName"><br>
     Last Name: <input type="text" ng-model="lastName"><br>
     <br>
     Full Name: {{firstName + " " + lastName}}
-    
+
     </div>
     
     <script>
     var app = angular.module('myApp', []);
     app.controller('myCtrl', ($scope) => {
-      $scope.firstName= "John";
-      $scope.lastName= "Doe";
+      $scope.firstName= "Tim";
+      $scope.lastName= "Z";
+    });
+    app.directive("timsTestDirective", function() {
+      return {
+        template : "I was made in a directive constructor!"
+      };
     });
     </script>
 </body>
